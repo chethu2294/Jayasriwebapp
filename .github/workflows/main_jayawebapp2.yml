@@ -22,16 +22,19 @@ jobs:
           dotnet-version: '3.1'
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build --configuration Release --source ./WebappVS
 
       - name: Publish with dotnet
-        run: dotnet publish -c Release -o ./publish
+        run: dotnet publish ./WebappVS/WebappVS.csproj -c Release -o ./WebappVS/publish
+
+      - name: List publish directory contents
+        run: dir /b /s ./WebappVS/publish
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: ./publish
+          path: ./WebappVS/publish
 
   deploy:
     runs-on: windows-latest
@@ -46,11 +49,14 @@ jobs:
         with:
           name: .net-app
 
+      - name: List download directory contents
+        run: dir /b /s ./WebappVS/publish
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'jayawebapp2'
           slot-name: 'Production'
-          package: ./publish
+          package: ./WebappVS/publish
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5C9CF6BE333F42DF92ED7E731E1F9D7C }}
