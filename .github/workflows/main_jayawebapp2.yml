@@ -42,7 +42,7 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
@@ -58,5 +58,5 @@ jobs:
         with:
           app-name: 'jayawebapp2'
           slot-name: 'Production'
-          package: ./WebappVS/publish
+          package: ${{ github.workspace }}
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5C9CF6BE333F42DF92ED7E731E1F9D7C }}
