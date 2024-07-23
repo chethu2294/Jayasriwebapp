@@ -22,13 +22,13 @@ jobs:
           dotnet-version: '3.1'
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release --source ./WebappVS
+        run: dotnet build --configuration Release ./WebappVS/WebappVS.csproj
 
       - name: Publish with dotnet
         run: dotnet publish ./WebappVS/WebappVS.csproj -c Release -o ./WebappVS/publish
 
       - name: List publish directory contents
-        run: dir /b /s ./WebappVS/publish
+        run: Get-ChildItem -Path ./WebappVS/publish -Recurse
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -50,7 +50,7 @@ jobs:
           name: .net-app
 
       - name: List download directory contents
-        run: dir /b /s ./WebappVS/publish
+        run: Get-ChildItem -Path ./WebappVS/publish -Recurse
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
