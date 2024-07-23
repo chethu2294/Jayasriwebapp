@@ -1,0 +1,7 @@
+C:\Users\bonag\source\repos\WebappVS\WebappVS\obj\Release\net8.0\PubTmp\Out\WebappVS.exe
+C:\Users\bonag\source\repos\WebappVS\WebappVS\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Users\bonag\source\repos\WebappVS\WebappVS\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\bonag\source\repos\WebappVS\WebappVS\obj\Release\net8.0\PubTmp\Out\WebappVS.dll
+C:\Users\bonag\source\repos\WebappVS\WebappVS\obj\Release\net8.0\PubTmp\Out\WebappVS.deps.json
+C:\Users\bonag\source\repos\WebappVS\WebappVS\obj\Release\net8.0\PubTmp\Out\WebappVS.runtimeconfig.json
+C:\Users\bonag\source\repos\WebappVS\WebappVS\obj\Release\net8.0\PubTmp\Out\WebappVS.pdb
