@@ -50,7 +50,7 @@ jobs:
           name: .net-app
 
       - name: List download directory contents
-        run: Get-ChildItem -Path ./WebappVS/publish -Recurse
+        run: Get-ChildItem -Path ${{ github.workspace }} -Recurse
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
